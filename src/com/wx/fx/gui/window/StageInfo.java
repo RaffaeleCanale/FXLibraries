@@ -1,5 +1,9 @@
 package com.wx.fx.gui.window;
 
+import com.wx.fx.Lang;
+
+import java.util.ResourceBundle;
+
 /**
  * This interface provides all the basic information needed to build a specific a Stage (window).
  * <p>
@@ -32,8 +36,8 @@ public interface StageInfo {
      *
      * @return The name of this stage's bundle or {@code null} if no bundle should be used
      */
-    default String getBundleBase() {
-        return null;
+    default ResourceBundle getBundleBase() {
+        return Lang.getBundle();
     }
 
     /**

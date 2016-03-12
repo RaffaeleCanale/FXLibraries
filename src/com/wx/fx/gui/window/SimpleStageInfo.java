@@ -1,5 +1,7 @@
 package com.wx.fx.gui.window;
 
+import java.util.ResourceBundle;
+
 /**
  * Basic implementation of a {@link StageInfo} that acts as a simple container for the various constants.
  * <p>
@@ -13,7 +15,7 @@ public class SimpleStageInfo implements StageInfo {
     private final String location;
     private final boolean isModal;
     private final int groupNumber;
-    private final String bundle;
+    private final ResourceBundle bundle;
 
     /**
      * Build a simple {@link StageInfo} container.
@@ -21,9 +23,9 @@ public class SimpleStageInfo implements StageInfo {
      * @param location    Location of the stage's {@code FXML} file
      * @param isModal     Defines if the stage is modal or not
      * @param groupNumber Defines the stage's group
-     * @param bundle      Name of the {@link java.util.ResourceBundle} to load with this stage
+     * @param bundle      Language ResourceBundle to load with this stage
      */
-    public SimpleStageInfo(String location, boolean isModal, int groupNumber, String bundle) {
+    public SimpleStageInfo(String location, boolean isModal, int groupNumber, ResourceBundle bundle) {
         this.location = location;
         this.isModal = isModal;
         this.groupNumber = groupNumber;
@@ -41,7 +43,7 @@ public class SimpleStageInfo implements StageInfo {
     }
 
     @Override
-    public String getBundleBase() {
+    public ResourceBundle getBundleBase() {
         return bundle;
     }
 

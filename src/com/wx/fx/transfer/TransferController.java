@@ -14,6 +14,8 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.StrokeLineCap;
 
+import java.util.ResourceBundle;
+
 /**
  * Created on 13/07/2015
  *
@@ -25,7 +27,7 @@ public class TransferController implements StageController {
     public static final StageInfo STAGE_INFO = new SimpleStageInfo("/com/wx/fx/transfer/TransferDialog.fxml",
             true,
             -1,
-            "fx_text");
+            ResourceBundle.getBundle("fx_text"));
     private static final Color LINE_COLOR = Color.color(0, 0, 0, 0.1);
     private static final double LINE_Y_INSETS = 5;
     private static final double LINE_WIDTH = 3;

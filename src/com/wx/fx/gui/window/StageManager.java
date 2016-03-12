@@ -161,16 +161,10 @@ public class StageManager {
         } else {
             try {
                 // Load the stage
-                FXMLLoader loader = new FXMLLoader(StageManager.class.getResource(stageInfo.location()));
-
-                String bundleBase = stageInfo.getBundleBase();
-                PropertiesManager bundle = null;
-
-                if (bundleBase != null) {
-                    ResourceBundle tmp = ResourceBundle.getBundle(bundleBase);
-                    loader.setResources(tmp);
-                    bundle = new PropertiesManager(new BundleWrapper(tmp));
-                }
+                FXMLLoader loader = new FXMLLoader(
+                        StageManager.class.getResource(stageInfo.location()),
+                        stageInfo.getBundleBase()
+                        );
 
                 Stage stage = loader.load();
                 StageController controller = loader.getController();
@@ -191,7 +185,7 @@ public class StageManager {
                 stage.setOnHiding(e -> controller.closing());
                 stage.setOnCloseRequest(e -> closeAndRemove(groupIndex, group, window));
 
-                controller.setContext(stage, bundle);
+                controller.setContext(stage);
 
 
                 stage.show();

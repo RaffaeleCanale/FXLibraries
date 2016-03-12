@@ -16,23 +16,18 @@ import java.util.ResourceBundle;
 public interface StageController {
 
     /**
-     * This method is called once at the stage's initialization. It provides a reference to the built stage as well as
-     * the corresponding {@link ResourceBundle}. Note that the bundle might be {@code null} if the {@link StageInfo} did
-     * not specify any bundle.
+     * This method is called once at the stage's initialization.
      *
      * @param stage  Reference to the stage corresponding to this controller
-     * @param bundle Corresponding language bundle if any
      */
-    default void setContext(Stage stage, PropertiesManager bundle) {
-    }
+    default void setContext(Stage stage) {}
 
     /**
      * This method is called every time this stage is activated. It receives the arguments passed along by the caller.
      *
      * @param args Optional arguments for this stage
      */
-    default void setArguments(Object... args) {
-    }
+    default void setArguments(Object... args) {}
 
     /**
      * This method is called when this stage is closed
