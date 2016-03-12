@@ -211,10 +211,6 @@ public class StageManager {
     }
 
     private static void closeAndRemove(int groupIndex, LinkedList<Window> group, Window stage) {
-        if (stage == null) {
-            throw new IllegalArgumentException(stage.info + " cannot be closed because it was not loaded");
-        }
-
         stage.stage.close();
         group.remove(stage);
         if (groupIndex >= 0 && !group.isEmpty()) {
