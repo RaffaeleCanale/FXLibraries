@@ -2,6 +2,7 @@ package com.wx.fx.util;
 
 import com.wx.properties.PropertiesMapInterface;
 
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.Set;
 
@@ -31,18 +32,18 @@ public class BundleWrapper implements PropertiesMapInterface {
 
 
     @Override
-    public String getProperty(String s) {
-        return containsKey(s) ? bundle.getString(s) : null;
+    public Optional<String> getProperty(String s) {
+        return containsKey(s) ? Optional.of(bundle.getString(s)) : Optional.empty();
 
     }
 
     @Override
-    public String setProperty(String key, String value) {
+    public Optional<String> setProperty(String key, String value) {
         throw new UnsupportedOperationException("ResourceBundle is read-only");
     }
 
     @Override
-    public String removeProperty(String s) {
+    public Optional<String> removeProperty(String s) {
         throw new UnsupportedOperationException("ResourceBundle is read-only");
     }
 

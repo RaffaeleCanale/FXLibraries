@@ -1,6 +1,5 @@
 package com.wx.fx.transfer;
 
-import com.wx.fx.installer.Constants;
 import com.wx.io.AccessorUtil;
 import com.wx.io.file.FileUtil;
 import com.wx.util.Format;
@@ -334,7 +333,7 @@ public class TransferTask extends Task<Void> {
 
         public TransferTask build() {
             if (resources == null) {
-                resources = ResourceBundle.getBundle(Constants.RESOURCE_BUNDLE);
+                resources = ResourceBundle.getBundle("fx_text");
             }
 
             return new TransferTask(tasks, finallyTasks, resources);
