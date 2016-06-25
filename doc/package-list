@@ -1,0 +1,6 @@
+com.wx.fx
+com.wx.fx.gui.window
+com.wx.fx.transfer
+com.wx.fx.util
+com.wx.fx.util.alert
+com.wx.fx.util.callback

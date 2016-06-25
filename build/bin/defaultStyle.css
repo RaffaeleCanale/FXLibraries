@@ -1,0 +1,13 @@
+#important {
+    -fx-font-weight: bold;
+}
+
+#title {
+    -fx-font-weight: bold;
+    -fx-font-size: 200%;
+    -fx-text-fill: #001f41;
+}
+
+#red_bar > .bar {
+    -fx-background-color: red;
+}

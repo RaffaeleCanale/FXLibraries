@@ -4,10 +4,7 @@ import com.wx.fx.util.BundleWrapper;
 import com.wx.properties.PropertiesManager;
 import com.wx.util.log.LogHelper;
 
-import java.util.Locale;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.ResourceBundle;
+import java.util.*;
 import java.util.logging.Logger;
 
 /**
@@ -101,7 +98,7 @@ public class Lang {
      */
     public static String getString(String key, Object... params) {
         return getOptionalString(key, params)
-                .orElseThrow(() -> new IllegalArgumentException("Missing language resource key: " + key));
+                .orElseThrow(() -> new MissingResourceException("Missing language resource key", langResource, key));
     }
 
 
